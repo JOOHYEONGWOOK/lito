@@ -1,0 +1,409 @@
+@import url('./fonts.css');
+@import url('./reset.css');
+
+#wrap {
+  width: 100%; overflow: hidden;
+  #header {
+    width: 100%; height: 80px; background-color: rgba(35,35,35,0); 
+    position: fixed; left: 0; top: 0; z-index: 3; transition: all 0.6s;
+    &.on {
+      background-color: rgba(35,35,35,1);
+      &.up {top: -80px;}
+    }
+    .container {
+      width: 100%; height: 100%; padding: 0 35px; display: flex; justify-content: space-between; align-items: center;
+      .left {
+        width: 111px; 
+        h1 {
+          width: 100%;
+          a {
+            display: block; width: 100%;
+            img {
+              width: 100%;
+              &.mobile-img {display: none;}
+            }
+          }
+        }
+      }
+      .center {
+        height: 100%;
+        #nav {
+          display: flex; justify-content: center; height: 100%;
+          > ul {
+            display: flex; height: 100%;
+            > li {
+              padding: 0 0 0 34px; position: relative; height: 100%;
+              > a {
+                display: flex; height: 100%; font-size: 14px; color: rgba(255,255,255,1); font-weight: 500; transition: all .3s; align-items: center; width: 100%;
+                &:hover {color: rgba(255,255,255,.5);}
+              }
+              .sub {
+                position: absolute; top: 80px; left: 0; background: #fff; border-radius: 5px;
+                .gap {
+                  padding: 50px 65px;
+                  > ul {
+                    width: 100%; display: flex;
+                    > li {
+                      width: 25%;
+                      dl {
+                        padding: 0 75px 0 0;
+                        dt {
+                          padding: 0 0 20px 0; font-size: 14px; color: #232323; font-weight: 500;
+                        }
+                        dd {
+                          padding: 0 0 20px 0;
+                          a {
+                            font-size: 14px; color: #828282; font-weight: 500; display: block; white-space: nowrap; transition: all .3s;
+                            &:hover {color: #232323;}
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                &.sub1 {
+                  left: -407px; display: none;
+                }
+                &.sub2,&.sub3,&.sub5,&.sub6 {
+                  .gap {
+                    padding: 25px 45px 5px 35px;
+                    > ul {
+                      width: 100%; display: block;
+                      > li {
+                        width: 100%; padding: 0 0 20px 0; position: relative;
+                        a {
+                          display: block; white-space: nowrap; padding: 0 70px 0 0; position: relative; color: #828282;
+                          i {position: absolute; top: 0; right: 0;}
+                        }
+                        .sub-sub {
+                          position: absolute; top: -25px; left: calc(100% + 47px); background: #fff; border-radius: 5px; display: none;
+                          .gap {
+                            > ul {
+                              > li {
+                                a {padding: 0 20px 0 0;}
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                &.sub2 {display: none;}
+                &.sub3 {display: none;}
+                &.sub4 {left: -407px; display: none;}
+                &.sub5 {
+                  display: none;
+                  .gap {
+                     ul {
+                       li {
+                        .sub-sub1 {
+                          left: calc(-148%);
+                          .gap {
+                            ul {
+                              li {
+                                .sub-sub-sub {
+                                  left: calc(-205%); position: absolute; top: -25px; background: #fff; border-radius: 5px; display: none;
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                &.sub6 {display: none;}
+                &.sub7 {left: -407px; display: none;}
+              }
+            }
+          }
+        }
+        #mobile-nav {
+          width: 100%; height: auto; padding: 15px 0 72px 0; background-color: #fff; display: none;
+          &.on {overflow: auto; height: 100vh;}
+          > ul {
+            > li {
+              > a {
+                display: block; padding: 15px; font-size: 16px; color: #232323; font-weight: 500; position: relative;
+                img {
+                  position: absolute; right: 20px; top:15px; height: 15px; transform: rotate(90deg); transition: all 0.3s;
+                  &.on {transform: rotate(270deg);}
+                }
+              }
+              .sub {
+                background-color: #f0f0f0; display: block;
+                .gap {
+                  padding: 20px 35px;
+                  > ul {
+                    > li {
+                      > a {line-height: 30px;}
+                      dl {
+                        dt {
+                          padding: 15px 0; font-size: 14px; color: #000; font-weight: 500;
+                        }
+                        dd {
+                          > a {
+                            padding: 7px 0; font-size: 14px; color: #999; display: block;
+                          }
+                        }
+                      }
+                      .sub-sub {
+                        .gap {
+                          padding: 0;
+                          ul {
+                            li {
+                              a {padding: 7px 0; font-size: 14px; color: #999; display: block;}
+                            }
+                          }
+                        }
+                        
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .right {
+        display: flex;
+        #aside {
+          a {
+            font-size: 14px; color: rgba(255,255,255,1); margin: 0 10px; transition: all .3s;
+            &:hover {color: rgba(255,255,255,.5);}
+            i {}
+          }
+        }
+        #mobile-menu {
+          width: 22px; height: 14px; display: none; position: relative; margin-left: 30px;
+          .bar {
+            height: 2px; background: #000; position: absolute; transition: all 0.3s;
+            &.bar1 {width: 14px; top: 0; left: 50%; margin-left: -7px;}
+            &.bar2 {width: 100%; top: 50%; margin-top: -1px;}
+            &.bar3 {width: 14px; bottom: 0; left: 50%; margin-left: -7px;}
+            &.on {
+              &.bar1 {width: 22px; top: 50%; left: 0; margin-left: 0; margin-top: -1px; transform: rotate(135deg);}
+              &.bar2 {opacity: 0;}
+              &.bar3 {width: 22px; bottom: 50%; left: 0; margin-left: 0; margin-bottom: -1px; transform: rotate(-135deg)}
+            }
+          }
+        }
+      }
+    }
+  }
+  #main {
+    width: 100%; z-index: 2; position: relative;
+    #section1 {
+      width: 100%;
+      .s-container {
+        width: 100%; position: relative;
+        .s-view {
+          width: 100%; height: 100vh; overflow: hidden; position: relative; z-index: 1;
+          .s-wrap {
+            width: 100%*5; height: 100%; margin-left: -100%; display: flex; position: relative;
+            .slide {
+              width: 100%; height: 100%; position: relative;
+              background: url() no-repeat 50% 50%;
+              background-size: cover; cursor: url(../img/icon-move-light.png), auto;
+              &.slide1 {background-image: url(../img/home-interior-design-slider-img01.jpg);}
+              &.slide2 {background-image: url(../img/home-interior-design-slider-img02-1.jpg);}
+              &.slide3 {background-image: url(../img/home-interior-design-slider-img03-scaled.jpg);}
+              .title {
+                width: 600px; height: 372.42px; padding: 0; background-color: #fff; display: flex; flex-flow: column;
+                position: absolute; bottom: 0; right: 0; text-transform: uppercase; cursor: default; justify-content: center;
+                h4 {
+                  font-size: 15px; font-weight: 500; color: #c3964e; display: flex; padding: 0 50px 25px 50px;
+                  width: 80%; 
+                  span {
+                    display: flex; align-items: center; justify-content: space-between; width: 80%;
+                    i {
+                      margin: 0 20px 0 30px; display: block; width: 40px; height: 1px; background-color: #ccc;
+                    }
+                  }
+                }
+                .bottom {
+                  display: flex; align-items: center; justify-content: space-between; padding: 0 50px;
+                  h2 {
+                    font-size: 47.60px; font-weight: 800; color: rgba(35,35,35,1); letter-spacing: -2px; line-height: 120%;
+                  }
+                  a {
+                    color: #fff; display: flex; width: 60px; height: 60px; align-items: center; justify-content: center; 
+                    background-color: #000; border-radius: 30px; margin: 0 0 0 20px;
+                    i {
+                      font-size: 16px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .prev-btn {position: absolute; left: 50px; top: 50%; font-size: 30px; color: #fff; z-index: 2;}
+        .next-btn {position: absolute; right: 50px; top: 50%; font-size: 30px; color: #fff; z-index: 2;}
+      }
+    }
+    #section2 {
+      position: relative; z-index: 2; padding: 160px 0 226px 0; width: 100%;
+      background-color: #fff;
+      .container {
+        width: 100%; max-width: 1170px; margin: 0 auto; position: relative; z-index: 2;
+        .content {
+          width: 100%;
+          ul {
+            width: 100%; display: flex;
+            li {
+              width: 33.333%;
+              .col-gap {
+                margin: 0 15px;
+                .wrap {
+                  width: 100%;
+                  &.wrap1 {
+                    h2 {font-size: 25.2px; font-weight: 700; color: #333; line-height: 140%;}
+                    p {
+                      padding: 25px 0 30px 0;
+                      a {font-size: 15px; color: #c3964e; padding: 0 0 2px 0; border-bottom: 1px solid #c3964e; font-weight: 500;}
+                    }
+                    span {
+                      > a {
+                        font-size: 11px; color: #333; font-weight: 600; border: 3px solid #333; 
+                        display: inline-block; padding: 10px 20px; background: #fff; transition: all .3s;
+                        &:hover {background: #000; color: #fff;}
+                      }
+                    }
+                  }
+                  &.wrap2 {
+                    h3 {font-size: 16px; color: #333; font-weight: 600; padding-bottom: 30px;}
+                    p {font-size: 15px; color: #999; line-height: 200%; padding-bottom: 30px; font-family: 'Roboto'; width: 85%;}
+                  }
+                  &.wrap3 {
+                    position: relative;
+                    .img-box {
+                      width: 100%; position: absolute; top: 0; left: 0;
+                      img {width: 100%; position: relative; z-index: 1;}
+                      a {
+                        position: absolute; bottom: 0; right: 0; padding: 35px; display: flex; z-index: 3; align-items: center; background-color: #f1edea;
+                        i {width: 50px; height: 50px; background-color: #000; border-radius: 30px;}
+                        span {font-size: 14px; font-weight: 600; color: #333; line-height: 150%; margin-left: 10px;}
+                      }
+                    }
+                  }
+                }
+                
+              }
+            }
+          }
+        }
+      }
+      .s2-ani-title {
+        position: absolute; left: 0; bottom: 130px; z-index: 2; font-size: 154px; font-weight: 700; color: #fff; transition: all 1s; font-family: 'Roboto';
+      }
+      .bottom-bg {
+        width: 100%; height: 120px; background-color: #f1edea; z-index: 1; position: absolute; bottom: 0; left: 0;
+      }
+    }
+    #section2.on .container .content ul li {
+      &:nth-child(1){animation: s2Ani1 1s;}
+      &:nth-child(2){animation: s2Ani2 2s;}
+      &:nth-child(3){animation: s2Ani3 3s;}
+    }
+    #section2.on .s2-ani-title {
+      animation: s2Ani4 4s both;
+    }
+    @keyframes s2Ani1 {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
+    }
+    @keyframes s2Ani2 {
+      0% {opacity: 0;}
+      34% {opacity: 0;}
+      100% {opacity: 1;}
+    }
+    @keyframes s2Ani3 {
+      0% {opacity: 0;}
+      50% {opacity: 0;}
+      100% {opacity: 1;}
+    }
+    @keyframes s2Ani4 {
+      0% {bottom: 130px;}
+      60% {bottom: 130px;}
+      100% {bottom: 30px;}
+    }
+
+    #section3 {
+      position: relative; z-index: 1; background-color: #f1edea; padding: 130px 0;
+      .container {
+        width: 100%; max-width: 1170px; margin: 0 auto;
+        .title {
+          width: 100%; padding: 0 15px 90px 15px; text-align: center;
+          h3 {font-size: 15px; color: #c3964e; font-weight: 500; padding-bottom: 20px;}
+          h2 {font-size: 32.2px; color: #232323; font-weight: 700;}
+        }
+        .content {
+          width: 100%; display: flex;
+          .left {
+            width: 390px; height: 335.188px; position: relative; z-index: 2; background-color: #f1edea;
+            .gap {
+              margin: 0 15px; width: auto; height: 100%;
+              > ul {
+                padding: 50px 40px; text-align: left;
+                > li {
+                  h3 {font-size: 15px; font-weight: 500; color: #828282; padding-bottom: 30px; font-family: 'Roboto';}
+                  h2 {font-size: 25.2px; font-weight: 700; color: #232323; padding-bottom: 50px; font-family: 'Roboto'; line-height: 140%;}
+                  a {
+                    &:first-child {margin-right: 10px;}
+                    i {font-size: 30px; color: #777;}
+                  }
+                }
+              }
+            }
+          }
+          .right {
+            width: 390px * 2; height: 335.188px; position: relative; z-index: 1; overflow: hidden;
+            .s-container {
+              width: 100%; height: 100%; position: relative; cursor: url(../img/icon-move-black.png), auto;
+              .s-view {
+                width: 100%; height: 100%; position: relative;
+                .s-wrap {
+                  width: 390px * 10; height: 100%; position: relative; display: flex; margin-left: -390px * 3;
+                  .slide {
+                    width: 390px; height: 100%; background-color: #f1edea; transition: all 0.45s; margin: 0 10px;
+                    &:hover {
+                      background-color: #fff;
+                      .col-gap {
+                        ul {
+                          padding: 40px;
+                          li {
+                            p {padding-bottom: 40px;}
+                            a {opacity: 1;}
+                          }
+                        }
+                      }
+                    }
+                    .col-gap {
+                      padding: 0 15px; width: auto; height: 100%; border: 1px solid #ddd; overflow: hidden;
+                      > ul {
+                        width: 100%; padding: 70px 40px; text-align: left; transition: all 0.45s; user-select: none;
+                        > li {
+                          h2 {font-size: 39.9px; color: #c3964e; font-weight: 700; padding-bottom: 25px; font-family: 'Roboto';}
+                          h3 {font-size: 16px; color: #232323; font-weight: 600; padding-bottom: 15px; text-transform: uppercase; font-family: 'Roboto';}
+                          p {font-size: 15px; color: #828282; font-weight: 400; line-height: 200%; padding-bottom: 60px; transition: all 0.3s;}
+                          a {font-size: 16px; color: #c3964e; font-weight: 600; padding-bottom: 3px; border-bottom: 1px solid #c3964e; opacity: 0; transition: all 0.45s; font-family: 'Roboto';}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  #footer {
+    z-index: 1; position: relative;
+    .container {}
+  }
+}
